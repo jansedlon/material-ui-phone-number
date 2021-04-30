@@ -9,7 +9,7 @@ export default defineConfig({
   build: {
     lib: {
       entry: path.resolve(__dirname, "src/index.js"),
-      name: "index",
+      name: "material-ui-phone-input",
     },
     rollupOptions: {
       external: [
