@@ -7,7 +7,7 @@ import Button from '@material-ui/core/Button';
 import Menu from '@material-ui/core/Menu';
 import Divider from '@material-ui/core/Divider';
 import NativeSelect from '@material-ui/core/NativeSelect';
-import withStyles from '@material-ui/core/styles/withStyles';
+import withStyles from '@material-ui/styles/withStyles';
 import {
   some, find, reduce, map, filter, includes, findIndex,
   head, tail, debounce, memoize, trim, startsWith, isString,
@@ -49,6 +49,7 @@ class MaterialUiPhoneNumber extends React.Component {
   flags = {};
 
   guessSelectedCountry = memoize((inputNumber, onlyCountries, defaultCountry) => {
+    console.log({ onlyCountries })
     const secondBestGuess = find(onlyCountries, { iso2: defaultCountry }) || {};
     if (trim(inputNumber) === '') return secondBestGuess;
 
