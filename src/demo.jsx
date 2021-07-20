@@ -68,6 +68,7 @@ export default render(
       <p>Auto country detect by value</p>
       <MaterialUiPhoneNumber
         value="+3802343252"
+        variant="outlined"
       />
       <p>Disabled area codes with disableAreaCodes</p>
       <MaterialUiPhoneNumber

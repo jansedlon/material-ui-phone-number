@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import TextField from '@material-ui/core/TextField';
 import InputAdornment from '@material-ui/core/InputAdornment';
-import Button from '@material-ui/core/Button';
+import ButtonBase from '@material-ui/core/ButtonBase';
 import Menu from '@material-ui/core/Menu';
 import Divider from '@material-ui/core/Divider';
 import NativeSelect from '@material-ui/core/NativeSelect';
@@ -49,7 +49,6 @@ class MaterialUiPhoneNumber extends React.Component {
   flags = {};
 
   guessSelectedCountry = memoize((inputNumber, onlyCountries, defaultCountry) => {
-    console.log({ onlyCountries })
     const secondBestGuess = find(onlyCountries, { iso2: defaultCountry }) || {};
     if (trim(inputNumber) === '') return secondBestGuess;
 
@@ -607,8 +606,7 @@ class MaterialUiPhoneNumber extends React.Component {
                 onClose={() => this.setState({ anchorEl: null })}
                 className={classes.native}
                 classes={{
-                  root: clsx(classes.nativeRoot, 'native', inputFlagClasses),
-                  select: classes.nativeSelect,
+                  select: clsx(classes.nativeSelect, classes.nativeRoot, 'native', inputFlagClasses),
                 }}
                 onChange={(e) => this.handleFlagItemClick(e.target.value)}
                 disableUnderline
@@ -645,7 +643,7 @@ class MaterialUiPhoneNumber extends React.Component {
           )
             : (
               <>
-                <Button
+                <ButtonBase
                   className={classes.flagButton}
                   aria-owns={anchorEl ? 'country-menu' : null}
                   aria-label="Select country"
@@ -653,7 +651,7 @@ class MaterialUiPhoneNumber extends React.Component {
                   aria-haspopup
                 >
                   <div className={inputFlagClasses} />
-                </Button>
+                </ButtonBase>
 
                 <Menu
                   className={dropdownClass}
