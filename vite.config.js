@@ -14,7 +14,7 @@ export default defineConfig({
       external: [
         'react',
         'react-dom',
-        /^@material-ui(.*)/,
+        /^@mui(.*)/,
         '@emotion/react',
         '@emotion/styled'
       ],

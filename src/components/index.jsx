@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
-import TextField from '@material-ui/core/TextField';
-import InputAdornment from '@material-ui/core/InputAdornment';
-import ButtonBase from '@material-ui/core/ButtonBase';
-import Menu from '@material-ui/core/Menu';
-import Divider from '@material-ui/core/Divider';
-import NativeSelect from '@material-ui/core/NativeSelect';
-import withStyles from '@material-ui/styles/withStyles';
+import TextField from '@mui/material/TextField';
+import InputAdornment from '@mui/material/InputAdornment';
+import ButtonBase from '@mui/material/ButtonBase';
+import Menu from '@mui/material/Menu';
+import Divider from '@mui/material/Divider';
+import NativeSelect from '@mui/material/NativeSelect';
+import withStyles from '@mui/styles/withStyles';
 import {
   some, find, reduce, map, filter, includes, findIndex,
   head, tail, debounce, memoize, trim, startsWith, isString,
